@@ -4,9 +4,9 @@ let usrYear = +prompt('Введите год');
 if (usrYear == 0) {
     alert('Введите год');
 } else {
-    if ((usrYear % 400) == 0 || (usrYear % 4) == 0) {
+    if ((usrYear % 400) == 0 || (usrYear % 4) == 0 && (usrYear % 100) != 0) {
         alert('Год високостный');
-    } else if ((usrYear % 100) != 0) {
+    } else {
         alert('Год не високостный');
     }
 }

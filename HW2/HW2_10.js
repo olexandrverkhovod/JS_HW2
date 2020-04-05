@@ -10,11 +10,10 @@ if (isNaN(usrDate) || isNaN(usrMonth) || isNaN(usrYear) || usrDate > 31 || usrMo
 
     usrDate = ++usrDate;
 
-    if (usrDate >= 29 && usrMonth == 2 && ((usrYear % 400) == 0 || (usrYear % 4) == 0)) {
+    if (usrDate >= 30 && usrMonth == 2 && ((usrYear % 400) == 0 || (usrYear % 4) == 0) && (usrYear % 100) != 0) {
         usrDate = 1;
         usrMonth = ++usrMonth;
-
-    } else if (usrDate >= 28 && usrMonth == 2 && ((usrYear % 100) != 0)) {
+    } else if (usrDate >= 29 && usrMonth == 2 && ((usrYear % 400) != 0 || (usrYear % 4) != 0) && (usrYear % 100) == 0) {
         usrDate = 1;
         usrMonth = ++usrMonth;
     }
